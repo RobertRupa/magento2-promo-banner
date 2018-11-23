@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Promotion banner on popup and in cart
+ *
+ * @package Konatsu_PromoBanner
+ * @author Robert Rupa <robert@konatsu.pl>
+ * @license OSL-3.0, AFL-3.0
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="columns">
+            <block class="Konatsu\PromoBanner\Block\Category\Banner" name="categoryt.products.banner" template="Konatsu_PromoBanner::category/banner.phtml" before="main"/>
+         </referenceBlock>
+    </body>
+</page>

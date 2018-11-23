@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Promotion banner on popup and in cart
+ *
+ * @package Konatsu_PromoBanner
+ * @author Robert Rupa <robert@konatsu.pl>
+ * @license OSL-3.0, AFL-3.0
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="konatsu" translate="label" sortOrder="10">
+            <label>Konatsu</label>
+        </tab>
+        <section id="promo_baner" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Promotion Banners</label>
+            <tab>konatsu</tab>
+            <resource>Konatsu_PromoBanner::promobanner_configuration</resource>
+            <group id="popup" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>PopUp Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="img_alt" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Alt for the image</label>
+                    <comment></comment>
+                </field>
+                <field id="img_src" translate="label" type="Magento\Framework\Data\Form\Element\Image" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">konatsu/promobanner</upload_dir>
+                    <base_url type="media" scope_info="1">konatsu/promobanner</base_url>
+                </field>
+                <field id="img_src_mobile" translate="label" type="Magento\Framework\Data\Form\Element\Image" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image mobile</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">konatsu/promobanner</upload_dir>
+                    <base_url type="media" scope_info="1">konatsu/promobanner</base_url>
+                </field>
+                <field id="custom_css" translate="label" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom styles</label>
+                </field>
+            </group>
+            <group id="category" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Category banner</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="editor_textarea" translate="conntent" sortOrder="30" type="editor" showInStore="1" showInDefault="1" >
+                    <label>WYSIWYG Editor</label>
+                    <frontend_model>Konatsu\PromoBanner\Block\Adminhtml\System\Config\Editor</frontend_model>
+                </field>
+            </group>
+            <group id="cart" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Cart banner</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="editor_textarea" translate="conntent" sortOrder="30" type="editor" showInStore="1" showInDefault="1" >
+                    <label>WYSIWYG Editor</label>
+                    <frontend_model>Konatsu\PromoBanner\Block\Adminhtml\System\Config\Editor</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

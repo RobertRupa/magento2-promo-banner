@@ -1,0 +1,48 @@
+/**
+ * Promotion banner on popup and in cart
+ *
+ * @package Konatsu_PromoBanner
+ * @author Robert Rupa <robert@konatsu.pl>
+ * @license OSL-3.0, AFL-3.0
+ */
+@desktop:   ~"screen and (min-width: 768px)";
+@mobile:    ~"screen and (max-width: 767px)";
+
+.promo-banner-popup {
+    display:none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    margin: 0 auto;
+    height: 100vh;
+    width: 100%;
+    background-color: RGBA(0,0,0,0.6);
+    z-index: 9999;
+    .promo-banner-body{
+        position: relative;
+        margin: 0 auto;
+        top: 25%;
+        display: table;
+        .banner-close{
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            font-size: 22px;
+            color: #FFF;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .banner-desktop{
+            display:none;
+            @media @desktop {
+                display: block;
+            }
+        }
+        .banner-mobile{
+            display:none;
+            @media @mobile {
+                display: block;
+            }
+        }
+    }
+}

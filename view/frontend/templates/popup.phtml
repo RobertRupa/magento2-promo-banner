@@ -1,0 +1,13 @@
+<?php if ($block->getProperty('promo_baner/popup/enable')): ?>
+<style><?php echo $block->filterOutputHtml($block->getProperty('promo_baner/popup/custom_css')); ?></style>
+<div class="promo-banner-popup">
+    <div class="promo-banner-body">
+        <span class="banner-close"><i class="fal fa-times"></i></span>
+        <img class="banner-desktop" src="<?php echo $block->getBaner()->imgSrcDesktop ?>" alt="<?php echo $block->getBaner()->imgAlt ?>" />
+        <img class="banner-mobile" src="<?php echo $block->getBaner()->imgSrcMobile ?>" alt="<?php echo $block->getBaner()->imgAlt ?>" />
+    </div>
+</div>
+<script type="text/javascript">
+    require(['popup'], function () {});
+</script>
+<?php endif;

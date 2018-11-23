@@ -1,0 +1,4 @@
+<?php 
+    if ($block->getProperty('promo_baner/category/enable')){
+        echo $block->filterOutputHtml($block->getProperty('promo_baner/category/editor_textarea'));
+    }
